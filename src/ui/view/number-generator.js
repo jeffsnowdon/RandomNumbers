@@ -3,20 +3,20 @@ import _ from 'underscore';
 import numberGeneratorTemplate from 'template/number-generator.html';
 
 export default Backbone.View.extend({
-    tagName : 'div',
-    class : 'number-generator',
-    template : _.template(numberGeneratorTemplate),
-    initialize : function(){
+    tagName: 'div',
+    class: 'number-generator',
+    template: _.template(numberGeneratorTemplate),
+    initialize: function () {
         this.listenTo(this.model, "change", this.render);
     },
-    render : function(){
+    render: function () {
         this.$el.html(this.template(this.model.attributes));
         return this;
     },
-    events : {
-        "click .generate-number-button" : "generateNumber"
+    events: {
+        "click .generate-button": "generateNumber"
     },
-    generateNumber : function(){
+    generateNumber: function () {
         this.model.generateNumber();
     }
 });

@@ -4,15 +4,15 @@ import NumberGeneratorView from './ui/view/number-generator';
 import NumberStatsModel from './ui/model/number-stats';
 import NumberStatsView from './ui/view/number-stats';
 
-$(document).ready(function() { 
+$(document).ready(function () {
     let numberGeneratorModel = new NumberGeneratorModel();
     let numberGeneratorView = new NumberGeneratorView({
-        model : numberGeneratorModel
+        model: numberGeneratorModel
     })
 
     let numberStatsModel = new NumberStatsModel();
     let numberStatsView = new NumberStatsView({
-        model : numberStatsModel
+        model: numberStatsModel
     })
 
     var appContainer = $('.app-container');

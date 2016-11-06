@@ -3,10 +3,10 @@ import datastore from '../../datastore/data-store';
 
 export default Backbone.Model.extend({
   defaults: {
-    "curNum" : "No number yet"
+    "curNum": "No number yet"
   },
-  generateNumber : function(){
-    var number = getRandomIntInclusive(1,100);
+  generateNumber: function () {
+    var number = getRandomIntInclusive(1, 100);
     datastore.addEntry(number, new Date());
     this.set('curNum', number);
   }
