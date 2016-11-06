@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
-import numberGeneratorTemplate from '../template/number-generator.html';
+import numberGeneratorTemplate from 'template/number-generator.html';
 
 export default Backbone.View.extend({
     tagName : 'div',

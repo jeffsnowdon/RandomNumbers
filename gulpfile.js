@@ -31,6 +31,7 @@ gulp.task('browserify', function() {
       cache: {},
       packageCache: {},
       debug:true,
+      paths: ['./node_modules','./assets/']
     });
   return rebundle(b);
 });
@@ -42,6 +43,7 @@ gulp.task('watch', function() {
        packageCache: {},
        debug:true,
        plugin: [watchify],
+       paths: ['./node_modules','./assets/']
      });
   b.on('update', function(){
     return rebundle(b);
