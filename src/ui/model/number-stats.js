@@ -9,7 +9,7 @@ export default Backbone.Model.extend({
         this.addListeners();
     },
     addListeners: function () {
-        this.listenTo(datastore, "change", function () {
+        this.listenTo(datastore, "add remove", function () {
             this.updateAverage();
         });
     },
@@ -17,10 +17,10 @@ export default Backbone.Model.extend({
         //recalculate average
         let total = 0;
         let count = 0;
-        for (let entry of datastore.get('entries')) {
-            total += entry.number;
+        datastore.each(function(entry){
+            total += entry.get('number');
             count++;
-        }
+        });
         let avg = Math.round(total / count);
         this.set("avgNum", avg);
     }

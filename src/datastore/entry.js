@@ -1,10 +1,12 @@
-export default class Entry {
+import Backbone from 'backbone';
+
+export default Backbone.Model.extend({
     /**
     * @param number Number associated with this entry.
     * @param date Date() of generation of this entry's number.
     */
-    constructor(number, date) {
-        this.number = number;
-        this.date = date;
+    defaults: {
+        "number": undefined,
+        "date": undefined
     }
-}
+});
