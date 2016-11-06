@@ -1,0 +1,17 @@
+<!-- use collection as model to show last x numbers generated -->
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% _.each(models, function(entry) { %>
+      <tr>
+        <td><%= entry.get('date') %></td>
+        <td><%= entry.get('number') %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

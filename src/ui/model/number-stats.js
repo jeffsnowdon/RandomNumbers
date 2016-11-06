@@ -9,7 +9,7 @@ export default Backbone.Model.extend({
         this.addListeners();
     },
     addListeners: function () {
-        this.listenTo(datastore, "add remove", function () {
+        this.listenTo(datastore, "add remove reset", function () {
             this.updateAverage();
         });
     },
