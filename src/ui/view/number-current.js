@@ -1,11 +1,11 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
-import numberGeneratorTemplate from 'template/number-generator.html';
+import numberCurrentTemplate from 'template/number-current.html';
 
 export default Backbone.View.extend({
     tagName: 'div',
-    className: 'number-generator',
-    template: _.template(numberGeneratorTemplate),
+    className: 'number-current',
+    template: _.template(numberCurrentTemplate),
     initialize: function () {
         this.listenTo(this.model, "change", this.render);
     },
@@ -13,10 +13,4 @@ export default Backbone.View.extend({
         this.$el.html(this.template(this.model.attributes));
         return this;
     },
-    events: {
-        "click .generate-button": "generateNumber"
-    },
-    generateNumber: function () {
-        this.model.generateNumber();
-    }
 });

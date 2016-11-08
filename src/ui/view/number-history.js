@@ -4,7 +4,7 @@ import numberHistoryTemplate from 'template/number-history.html';
 
 export default Backbone.View.extend({
     tagName: 'div',
-    class: 'number-history',
+    className: 'number-history panel',
     template: _.template(numberHistoryTemplate),
     initialize: function () {
         this.listenTo(this.model, "add remove reset", this.render);
