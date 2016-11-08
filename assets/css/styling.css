@@ -1,6 +1,7 @@
 html{
     background-color : #ECF8C6;
     box-sizing:border-box;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 *,
@@ -13,6 +14,7 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
+	position:relative;
 }
 
 .generate-button {
@@ -58,14 +60,31 @@ html{
 }
 
 .panel {
-	border-radius: 33px 33px 33px 33px;
-	-moz-border-radius: 33px 33px 33px 33px;
-	-webkit-border-radius: 33px 33px 33px 33px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
 	border: 4px solid #509231;
 	background-color: #DAEE9B;
 	min-width: 350px;
 	min-height: 250px;
 	margin: 5px;
+	display: flex;
+  	flex-flow: column nowrap;
+}
+
+.panel-content-area{
+	overflow: auto;
+}
+
+.panel-config-bar {
+	background-color: #D8E2B5;
+	border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+}
+
+.config-bar-title {
+	font-weight: bold;
 }
 
 .container {
@@ -90,15 +109,14 @@ html{
 	min-height: 100px;
 	margin: 0;
 	font-size: 48px;
-	font-family: Verdana, Geneva, sans-serif;
-	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	/*font-family: Futura, "Trebuchet MS", Arial, sans-serif;*/
 	color: #2e6b11;
     /*background-color: #cae9ba;*/
 	border-color: #cae9ba;
 	border-style: solid;
-    border-radius: 33px 33px 33px 33px;
-	-moz-border-radius: 33px 33px 33px 33px;
-	-webkit-border-radius: 33px 33px 33px 33px;
+    border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
 }
 
 .number-current-text {
