@@ -1,9 +1,10 @@
 import Backbone from 'backbone';
 import datastore from '../../datastore/data-store';
-import Entry from '../../datastore/entry';
+import EntryRow from '../table/entry-row';
+import {formatDate} from '../table/entry-table-renderer';
 
 export default Backbone.Collection.extend({
-    model: Entry,
+    model: EntryRow,
     initialize: function () {
         this.numEntries = 5;
         this.addListeners();
@@ -22,14 +23,19 @@ export default Backbone.Collection.extend({
     },
     getEntriesFromDatastore(numEntries) {
         let numEntriesToGet = numEntries;
-        let entries = [];
+        let entryRows = [];
         if (datastore.length < numEntries) {
             numEntriesToGet = datastore.length;
         } 
         //get items from the end of the list
         for (let i = datastore.length; i > datastore.length - numEntriesToGet; i--) {
-            entries.push(datastore.at(i - 1));
+            let curEntry = datastore.at(i - 1);
+            let formattedDate = formatDate(curEntry.get('date'));
+            entryRows.push(new EntryRow({
+                number: curEntry.get('number'),
+                date: formattedDate
+            }));
         }
-        return entries;
+        return entryRows;
     }
 });
