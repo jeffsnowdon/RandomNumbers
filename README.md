@@ -1,10 +1,10 @@
 # RandomNumbers
 
-Random number generation application.
+Generate random numbers on client side. Record history of numbers generated.
 
-Intended stack: 
-* ES6 modules
-* Babel
-* Browserify
-* Backbone
-* Gulp
+### Tech
+ - ES6 modules
+ - Backbone.js
+ - Babel
+ - Browserify
+ - Gulp
